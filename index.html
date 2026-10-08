@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LifeDesk – Look after your parents, even from far away</title>
+<meta name="description" content="LifeDesk handles insurance, appointments, repairs and documents for your parents in another city, and keeps you updated until it's done.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#000;--muted:#5c5c5c;--line:#d4d4d4;--soft:#f3f3f3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--ink:#fff;--muted:#a3a3a3;--line:#333;--soft:#111}}
+:root[data-theme="dark"]{--bg:#000;--ink:#fff;--muted:#a3a3a3;--line:#333;--soft:#111}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Bricolage Grotesque",system-ui,sans-serif}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.03em;font-weight:800}
+h1{font-size:clamp(2.5rem,8.5vw,5.6rem)}
+h2{font-size:clamp(1.9rem,5vw,3rem)}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:80px 0;border-top:1px solid var(--line)}
+.lead{color:var(--muted);max-width:56ch;margin-top:14px}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.3rem;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:20px;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.btn,button{font:600 .98rem "Bricolage Grotesque",sans-serif;cursor:pointer}
+.btn{display:inline-block;background:var(--ink);color:var(--bg)!important;padding:13px 24px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink)!important}
+.ico{background:none;border:1.5px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;font-size:1rem;line-height:1}
+:is(a,button,input,select,textarea):focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.hero{padding:70px 0 60px;border:0}
+.hero p.sub{font-size:1.2rem;color:var(--muted);margin:24px 0 30px;max-width:48ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.marq{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px;color:var(--muted);font-size:.95rem}
+.marq span{border:1px solid var(--line);padding:6px 14px;border-radius:999px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.worry{list-style:none;margin:0;padding:0}
+.worry li{padding:16px 0;border-top:1px solid var(--line);font-size:1.1rem}
+.worry li:last-child{border-bottom:1px solid var(--line)}
+.worry li::before{content:"“";font-weight:800;margin-right:4px}
+.worry li::after{content:"”";font-weight:800;margin-left:2px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:600}
+.steps b{display:block}.steps span{color:var(--muted);font-size:.95rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);margin-top:34px}
+.cols>div{padding:30px}.cols>div+div{border-left:1.5px solid var(--ink);background:var(--ink);color:var(--bg)}
+.cols h3{font-size:1.5rem;margin-bottom:12px}
+.cols ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips span{border:1.5px solid var(--ink);padding:10px 18px;border-radius:999px;font-weight:600}
+.chips button{background:var(--bg);color:var(--ink);border:1.5px solid var(--ink);padding:10px 18px;border-radius:999px}
+.chips button:hover{background:var(--ink);color:var(--bg)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1.5px solid var(--ink);margin-top:34px}
+.svc>div{background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:8px}
+.svc b{font-size:1.1rem;letter-spacing:-.01em}.svc span{color:var(--muted);font-size:.93rem}
+.svc .btn{margin-top:auto;align-self:flex-start;padding:8px 16px;font-size:.88rem}
+@media(max-width:860px){.svc{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.svc{grid-template-columns:1fr}}
+.app{border:1.5px solid var(--ink);border-radius:18px;margin-top:34px;overflow:hidden}
+.who{display:flex;gap:10px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.who label{font-weight:600}.who input{width:auto;flex:1;min-width:120px}
+form.add{display:grid;grid-template-columns:2fr 1.3fr 1fr auto;gap:10px;padding:16px;background:var(--soft);border-bottom:1.5px solid var(--ink)}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:400 1rem "Bricolage Grotesque",sans-serif}
+.stats{display:flex;gap:26px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--muted);flex-wrap:wrap;align-items:center}
+.stats b{color:var(--ink);font-size:1.2rem;margin-right:4px}
+.stats button{margin-left:auto;background:none;border:0;color:var(--muted);text-decoration:underline}
+.t{display:grid;grid-template-columns:1fr auto;gap:8px 16px;padding:16px 18px;border-bottom:1px solid var(--line);align-items:center}
+.t b{font-size:1.05rem}.t small{color:var(--muted);display:block}
+.t.late small .d{color:var(--ink);font-weight:600;text-decoration:underline}
+.prog{grid-column:1/-1;display:flex;gap:6px;align-items:center;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.prog i{width:34px;height:6px;border-radius:3px;background:var(--line)}.prog i.on{background:var(--ink)}
+.acts{display:flex;gap:8px}
+.acts button{border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:.88rem}
+.acts button.x{background:none;color:var(--ink);border-color:var(--line)}
+.t.fin b{text-decoration:line-through;color:var(--muted)}
+.empty{padding:34px;text-align:center;color:var(--muted)}
+.feed{border-top:1.5px solid var(--ink);background:var(--soft);padding:14px 18px;font-size:.93rem}
+.feed b{display:block;margin-bottom:6px}
+.feed div{padding:4px 0;color:var(--muted)}.feed div:first-of-type{color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);margin-top:34px}
+.plan{padding:28px;display:flex;flex-direction:column;gap:10px;border-right:1.5px solid var(--ink)}
+.plan:last-child{border-right:0}
+.plan.sel{background:var(--ink);color:var(--bg)}
+.plan.sel .btn{background:var(--bg);color:var(--ink)!important;border-color:var(--bg)}
+.plan h3{font-size:1.6rem}.plan ul{margin:4px 0 14px;padding-left:18px;opacity:.8;font-size:.95rem}
+.plan .btn{margin-top:auto;text-align:center}
+.note{color:var(--muted);font-size:.9rem;margin-top:14px}
+.contact{background:var(--ink);color:var(--bg)}
+.contact .lead{color:var(--bg);opacity:.7}
+.contact input,.contact select,.contact textarea{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.contact .btn{background:var(--bg);color:var(--ink)!important;border-color:var(--bg)}
+.contact :is(a,button,input,select,textarea):focus-visible{outline-color:var(--bg)}
+form.c{display:grid;gap:12px}.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#ok{display:none;border:1.5px solid var(--bg);padding:14px;border-radius:10px}
+footer{padding:28px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){.two,.cols{grid-template-columns:1fr}.cols>div+div{border-left:0;border-top:1.5px solid var(--ink)}.plans{grid-template-columns:1fr}.plan{border-right:0;border-bottom:1.5px solid var(--ink)}.plan:last-child{border-bottom:0}form.add{grid-template-columns:1fr 1fr}form.add input:first-child{grid-column:1/-1}nav a.l{display:none}section{padding:56px 0}}
+@media(max-width:480px){form.add,.r2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15 16 4l13 11"/><path d="M6 13v15h20V13"/><path d="m11 18 4 4 7-8"/></svg>LifeDesk</a>
+<nav><a class="l" href="#how">How it works</a><a class="l" href="#services">Services</a><a class="l" href="#try">Try it</a><a class="l" href="#plans">Plans</a><a class="btn" href="#start" style="padding:9px 18px">Get started</a><button class="ico" id="theme" aria-label="Switch between white and black theme">◐</button></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<h1>Be there for your parents, even when you can't be.</h1>
+<p class="sub">LifeDesk looks after the everyday tasks of parents who live far from their children: insurance, doctor visits, repairs and documents. We get them done and keep you updated.</p>
+<div class="cta"><a class="btn" href="#try">Try the task board</a><a class="btn alt" href="#plans">See plans</a></div>
+<div class="marq"><span>Save time</span><span>Reduce worry</span><span>Stay organized</span><span>Nothing gets missed</span></div>
+</div></section>
+
+<section><div class="wrap two">
+<div><h2>Distance makes small things feel big.</h2><p class="lead">When you live in another city, a missed insurance renewal or an unbooked check-up turns into stress, extra cost and guilt. Calling to chase it isn't a plan.</p></div>
+<ul class="worry">
+<li>Did Dad renew the car insurance?</li>
+<li>Is Mom's health check-up booked?</li>
+<li>Who can fix the water heater this week?</li>
+<li>Are her documents about to expire?</li>
+</ul>
+</div></section>
+
+<section id="how"><div class="wrap two">
+<div><h2>How LifeDesk works for your family</h2><p class="lead">You stay in charge from wherever you are. We handle the doing.</p></div>
+<ol class="steps">
+<li><div><b>You tell us what's needed</b><span>By app, website, WhatsApp or call. For example an insurance renewal or a service booking.</span></div></li>
+<li><div><b>We verify the details</b><span>Timing, location and the right type of provider for your parent.</span></div></li>
+<li><div><b>A coordinator takes over</b><span>They work with verified service partners in your parent's city.</span></div></li>
+<li><div><b>We book and follow up</b><span>Schedule, confirm and chase until it's done.</span></div></li>
+<li><div><b>You get confirmation</b><span>We confirm completion and ask for your feedback.</span></div></li>
+</ol>
+</div></section>
+
+<section><div class="wrap">
+<h2>Made for both sides of the distance</h2>
+<div class="cols">
+<div><h3>For children</h3><ul><li>One place for every task across cities</li><li>Smart reminders before deadlines</li><li>A coordinator who follows up for you</li><li>Confirmation when it's done</li></ul></div>
+<div><h3>For parents</h3><ul><li>Less to remember and less to chase</li><li>One dedicated team to deal with</li><li>Verified service providers</li><li>Independence, with help close by</li></ul></div>
+</div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<h2>Everything on your parents' list, in one place</h2>
+<p class="lead">One service for the personal and household tasks that are easy to forget. Add any of them to the task board below.</p>
+<div class="svc" id="svc"></div>
+<div class="chips" aria-label="Also for"><span>Also for urban professionals (25–45)</span><span>Working couples and small families</span><span>Business owners and busy individuals</span><span>Companies, as an employee benefit</span></div>
+</div></section>
+
+<section id="try"><div class="wrap">
+<h2>Try the family task board</h2>
+<p class="lead">Add a task for your parent, set a due date and move it through each stage. Everything is saved in this browser.</p>
+<div class="app">
+<div class="who"><label for="pn">Task for</label><input id="pn" value="Mom" maxlength="30" aria-label="Parent's name"></div>
+<form class="add" id="add">
+<input id="tt" placeholder="Task, e.g. Renew car insurance" aria-label="Task" required>
+<select id="tc" aria-label="Category"></select>
+<input id="td" type="date" aria-label="Due date" required>
+<button class="btn" type="submit">Add</button>
+</form>
+<div class="stats" id="stats"></div>
+<div id="list"></div>
+<div class="feed" id="feed"></div>
+</div>
+<div class="chips" id="quick" aria-label="Quick add"></div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+<h2>Choose a plan</h2>
+<p class="lead">Subscriptions for families. Selected tasks may carry a service coordination fee.</p>
+<div class="plans">
+<div class="plan" data-p="Basic"><h3>Basic</h3><p>One parent, deadlines tracked.</p><ul><li>Smart reminders</li><li>Task tracking</li></ul><a class="btn alt" href="#start" data-pick="Basic">Choose Basic</a></div>
+<div class="plan" data-p="Family"><h3>Family</h3><p>Shared by siblings, for one or both parents.</p><ul><li>Everything in Basic</li><li>Shared household tasks</li><li>Coordination and follow-up</li></ul><a class="btn alt" href="#start" data-pick="Family">Choose Family</a></div>
+<div class="plan" data-p="Premium"><h3>Premium</h3><p>Everything handled, with priority.</p><ul><li>Everything in Family</li><li>Priority coordination</li><li>Dedicated support team</li></ul><a class="btn alt" href="#start" data-pick="Premium">Choose Premium</a></div>
+</div>
+<p class="note">Also available: corporate plans that companies can offer as an employee benefit, and a partner network for verified service providers.</p>
+</div></section>
+
+<section id="start" class="contact"><div class="wrap two">
+<div><h2>Get started</h2><p class="lead">Tell us about your parents and where they live. We'll get in touch to set up your plan.</p></div>
+<form class="c" id="f">
+<input id="fn" placeholder="Your name" aria-label="Your name" required>
+<input id="fc" placeholder="Phone, WhatsApp or email" aria-label="Phone, WhatsApp or email" required>
+<div class="r2"><input id="fy" placeholder="Your city" aria-label="Your city"><input id="fq" placeholder="Parents' city" aria-label="Parents' city" required></div>
+<select id="fp" aria-label="Interested in"><option>Basic plan</option><option>Family plan</option><option>Premium plan</option><option>Corporate plan</option><option>Become a service partner</option></select>
+<textarea id="fm" rows="3" placeholder="What would you like help with for your parents?" aria-label="Message"></textarea>
+<button class="btn" type="submit">Send request</button>
+<div id="ok" role="status"></div>
+</form>
+</div></section>
+</main>
+<footer><div class="wrap"><span><b>LifeDesk</b> Personal Life Management Service</span><span>Your tasks. Our responsibility.</span></div></footer>
+
+<script>
+// Set your real contact details. If whatsapp is set, the form opens WhatsApp; else if email is set, it opens an email.
+var CONFIG={email:"",whatsapp:""}; // whatsapp: digits only with country code, e.g. "919876543210"
+var CATS=["Insurance","Health","Vehicle","Home","Documents","Subscriptions","Warranty","Other"];
+var STAGES=["Requested","Verified","Assigned","Booked","Completed"];
+var KEY="lifedesk_family_v1",tasks=[],feed=[];
+function load(){try{var s=localStorage.getItem(KEY);if(s)return JSON.parse(s)}catch(e){}return null}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({tasks:tasks,feed:feed,pn:$("pn").value}))}catch(e){}}
+function iso(n){var d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+var $=function(i){return document.getElementById(i)};
+var saved=load();
+if(saved){tasks=saved.tasks||[];feed=saved.feed||[];$("pn").value=saved.pn||"Mom"}
+else{tasks=[{id:1,t:"Renew car insurance",c:"Insurance",d:iso(5),s:1,w:"Dad"},{id:2,t:"Book health check-up",c:"Health",d:iso(12),s:0,w:"Mom"}]}
+$("tc").innerHTML=CATS.map(function(c){return "<option>"+c+"</option>"}).join("");
+$("td").value=iso(7);$("td").min=iso(0);
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function due(d){var n=Math.round((new Date(d+"T00:00:00")-new Date(new Date().toDateString()))/864e5);
+ if(n<0)return{t:"Overdue by "+(-n)+" day"+(n==-1?"":"s"),late:1};if(n==0)return{t:"Due today",late:1};if(n==1)return{t:"Due tomorrow"};return{t:"Due in "+n+" days"}}
+function log(m){feed.unshift(m);feed=feed.slice(0,6)}
+function render(){
+ tasks.sort(function(a,b){return (a.s==4)-(b.s==4)||a.d.localeCompare(b.d)});
+ var open=tasks.filter(function(x){return x.s<4}),late=open.filter(function(x){return due(x.d).late}).length;
+ $("stats").innerHTML="<span><b>"+open.length+"</b>open</span><span><b>"+late+"</b>need attention</span><span><b>"+(tasks.length-open.length)+"</b>completed</span>"+(tasks.length?"<button id=clr>Clear all</button>":"");
+ $("list").innerHTML=tasks.length?tasks.map(function(x){var du=due(x.d);
+  return '<div class="t'+(x.s==4?' fin':'')+(du.late&&x.s<4?' late':'')+'"><div><b>'+esc(x.t)+'</b><small>For '+esc(x.w||"Parent")+' · '+x.c+' · '+(x.s==4?'Done':'<span class="d">'+du.t+'</span>')+'</small></div><div class="acts">'+(x.s<4?'<button data-a="adv" data-i="'+x.id+'">Move to '+STAGES[x.s+1]+'</button>':'')+'<button class="x" data-a="del" data-i="'+x.id+'" aria-label="Delete task">Delete</button></div><div class="prog">'+STAGES.map(function(_,k){return '<i class="'+(k<=x.s?'on':'')+'"></i>'}).join("")+'<span>'+STAGES[x.s]+'</span></div></div>'}).join(""):'<div class="empty">No tasks yet. Add one above or pick a quick task below.</div>';
+ $("feed").innerHTML=feed.length?"<b>Updates for you</b>"+feed.map(function(m){return "<div>"+esc(m)+"</div>"}).join(""):"<b>Updates for you</b><div>Status changes appear here, like the updates you'd receive from LifeDesk.</div>";
+}
+function add(t,c,d){tasks.push({id:Date.now(),t:t,c:c,d:d,s:0,w:$("pn").value.trim()||"Parent"});log("Requested: "+t+" for "+($("pn").value.trim()||"your parent"));save();render()}
+$("add").onsubmit=function(e){e.preventDefault();add($("tt").value.trim(),$("tc").value,$("td").value);$("tt").value=""};
+$("pn").oninput=save;
+$("list").onclick=function(e){var b=e.target.closest("button");if(!b)return;var id=+b.dataset.i;
+ if(b.dataset.a=="adv")tasks.forEach(function(x){if(x.id==id&&x.s<4){x.s++;log(STAGES[x.s]+": "+x.t+" for "+(x.w||"your parent"))}});
+ if(b.dataset.a=="del")tasks=tasks.filter(function(x){return x.id!=id});save();render()};
+$("stats").onclick=function(e){if(e.target.id=="clr"&&confirm("Remove all tasks?")){tasks=[];feed=[];save();render()}};
+var Q=[["Renew insurance","Insurance",30],["Book health check-up","Health",14],["Service the car","Vehicle",10],["Fix home appliance","Home",7],["Renew documents","Documents",60]];
+$("quick").innerHTML=Q.map(function(q,i){return '<button data-q="'+i+'">+ '+q[0]+'</button>'}).join("");
+$("quick").onclick=function(e){var b=e.target.closest("button");if(!b)return;var q=Q[b.dataset.q];add(q[0],q[1],iso(q[2]))};
+var S=[["Insurance renewals","We track renewal dates, remind you and coordinate the renewal.","Insurance","Renew insurance"],
+["Health check-up booking","We book appointments and confirm the time.","Health","Book health check-up"],
+["Vehicle service and repair","We schedule servicing and repairs with verified partners.","Vehicle","Service the vehicle"],
+["Home appliance maintenance","We arrange technicians for appliance servicing and repair.","Home","Appliance maintenance"],
+["Document renewal","We track expiry dates and coordinate renewals and updates.","Documents","Renew documents"],
+["Subscription management","We keep track of subscriptions and their renewal dates.","Subscriptions","Review subscriptions"],
+["Warranty tracking","We keep warranty details and expiry dates in one place.","Warranty","Check warranty"],
+["Other lifestyle tasks","Tell us what you need and we'll coordinate it.","Other","Other task"]];
+$("svc").innerHTML=S.map(function(s,i){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span><button class="btn alt" data-s="'+i+'">Add to board</button></div>'}).join("");
+$("svc").onclick=function(e){var b=e.target.closest("button");if(!b)return;var s=S[b.dataset.s];add(s[3],s[2],iso(14));$("try").scrollIntoView({behavior:"smooth"})};
+function pick(p){document.querySelectorAll(".plan").forEach(function(el){el.classList.toggle("sel",el.dataset.p==p)});$("fp").value=p+" plan"}
+document.querySelectorAll("[data-pick]").forEach(function(a){a.onclick=function(){pick(a.dataset.pick)}});
+$("f").onsubmit=function(e){e.preventDefault();
+ var body="Name: "+$("fn").value+"\nContact: "+$("fc").value+"\nMy city: "+$("fy").value+"\nParents' city: "+$("fq").value+"\nInterested in: "+$("fp").value+"\nMessage: "+$("fm").value+"\nTasks: "+tasks.map(function(x){return x.t}).join(", ");
+ var ok=$("ok");ok.style.display="block";
+ if(CONFIG.whatsapp){window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(body),"_blank");ok.textContent="Opening WhatsApp with your request."}
+ else if(CONFIG.email){location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("LifeDesk request")+"&body="+encodeURIComponent(body);ok.textContent="Opening your email app with your request."}
+ else ok.textContent="Thanks, "+$("fn").value+". Your request is ready. Add an email or WhatsApp number in the page settings to receive requests."};
+var root=document.documentElement;
+try{var th=localStorage.getItem("lifedesk_theme");if(th)root.dataset.theme=th}catch(e){}
+$("theme").onclick=function(){var dark=root.dataset.theme?root.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+ root.dataset.theme=dark?"light":"dark";try{localStorage.setItem("lifedesk_theme",root.dataset.theme)}catch(e){}};
+render();
+</script>
+</body>
+</html>
